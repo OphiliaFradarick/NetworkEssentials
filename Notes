@@ -1,0 +1,17 @@
+## Router Command Line Modes ##
+1. User EXEC mode --> Indicated by a > character in the prompt --> first level of access
+2. Privileged EXEC mode --. allows you to view system configuartion, restart etc --> indicated by a # sign in the prompt --> type enable to move from User to the Priviledge mode
+3. Global Configuration mode --> This is the mode that allows the user to modify the running system config. It allows you to put the IP addresses, change the name of the router.
+                                  To enter into the global configuration mode type --> Router#configure terminal
+
+It's a best practice to make sure that you have a clean router before you start the configuration. To do that you hav eto delete any files that might be saved.
+use the command Router#erase startup-config --> click on yes to erase ---> Router#reload --> yes to reload
+
+Sometimes, we might enter invalid commands, and the cli will lookup for a match of the IP address for the command you wrote and it won't be able to find one. 
+In order to avoid this, write the following command
+Router(config)#no ip domain-lookup --> This will turn off the dns lookup
+
+## Login Banner Command ##
+Login Banner or otherwise known as messag eof the day Or MOTD banner, should always be configured to warn anyone accesing the router that unauthorized access and will not be tolerated.
+Router(config)#banner motd#unauthorized access is forbidden and will be enforced by the fullest extend of the law.#
+
